@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hello World App</title>
+</head>
+<body>
+  <h1>Hello, World!</h1>
+
+  <p>Visitor count: <span id="counter">Loading...</span></p>
+
+  <script>
+    fetch('http://localhost:5000/hit')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('counter').innerText = data.count;
+      });
+  </script>
+</body>
+</html>
