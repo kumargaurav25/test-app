@@ -11,7 +11,7 @@
   <p>Visitor count: <span id="counter">Loading...</span></p>
 
   <script>
-    fetch('http://localhost:5000/hit')
+    fetch('http://backend:5000/hit')
       .then(res => res.json())
       .then(data => {
         document.getElementById('counter').innerText = data.count;
