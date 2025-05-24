@@ -1,7 +1,9 @@
 version: '3'
 services:
   frontend:
-    build: ./frontend
+    build: 
+           context: ./frontend
+           dockerfile: Dockerfile
     ports:
       - "8080:80"
     depends_on:
@@ -10,7 +12,9 @@ services:
       - app-network
 
   backend:
-    build: ./backend
+    build: 
+           context: ./backend
+           dockerfile: Dockerfile
     ports:
       - "5000:5000"
     networks:
