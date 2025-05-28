@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Single App</title>
+</head>
+<body>
+  <h1>Hello Frontend</h1>
+  <button onclick="getMessage()">Talk to Backend</button>
+  <p id="output">Waiting...</p>
+
+  <script>
+    function getMessage() {
+      fetch('/api/message')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById("output").innerText = data.message;
+        })
+        .catch(err => {
+          document.getElementById("output").innerText = "Error contacting backend.";
+        });
+    }
+  </script>
+</body>
+</html>
